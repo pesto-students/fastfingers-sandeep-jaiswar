@@ -1,5 +1,4 @@
 import React from 'react';
-import Score from "../../utilities/Score";
 import Wrapper from "../../utilities/Wrapper";
 import GameName from "../../utilities/GameName";
 import PlayAgain from "../../utilities/PlayAgain";
