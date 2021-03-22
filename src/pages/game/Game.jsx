@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StopWatch from "../../utilities/StopWatch";
 import Score from "../../utilities/Score";
+import ScoreBoard from "../../utilities/ScoreBoard";
 import Wrapper from "../../utilities/Wrapper";
 import GameName from "../../utilities/GameName";
 import StopGame from "../../utilities/StopGame";
 import UserName from "../../utilities/UserName";
 import UserDifficulty from "../../utilities/UserDifficulty";
 import './Game.css';
+import { useHistory  } from 'react-router-dom';
 
 function Game() {
+    const history = useHistory();
+    const difficultyFactor = {
+        "Easy": 1,
+        "Medium": 1.5,
+        "Hard": 2
+    }
+    const [scoreArray,setScoreArray] = useState([]);
     return (
         <Wrapper>
             <div className="game">
@@ -16,11 +25,11 @@ function Game() {
                     <div className="item"><UserName /></div>
                     <div className="item"><UserDifficulty /></div>
                     <div className="item scoreboard">
-                        <h4>SCORE BOARD</h4>
+                        <ScoreBoard scoreArray={scoreArray}/>
                     </div>
-                    <div className="item">
-                        <StopGame />
-                    </div>
+                    <button className="stopgame-btn" onClick={()=>history.push('/result')}>
+                        <StopGame /> 
+                    </button>
                 </div>
                 <div className="main-content">
                     <div className="game-content">
