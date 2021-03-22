@@ -12,11 +12,6 @@ import { useHistory  } from 'react-router-dom';
 
 function Game() {
     const history = useHistory();
-    const difficultyFactor = {
-        "Easy": 1,
-        "Medium": 1.5,
-        "Hard": 2
-    }
     const [scoreArray,setScoreArray] = useState([]);
     return (
         <Wrapper>
@@ -33,7 +28,7 @@ function Game() {
                 </div>
                 <div className="main-content">
                     <div className="game-content">
-                        <StopWatch/>
+                        <StopWatch setScoreArray={setScoreArray}/>
                         <h1>WINDOW</h1>
                         <input type="text" placeholder="ENTER TEXT" id="entered-text"/>
                     </div>
