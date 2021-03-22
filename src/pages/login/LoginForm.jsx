@@ -8,6 +8,8 @@ function LoginForm() {
     const DifficultyArray = ['Easy','Medium','Hard']
     const startGame = (e) => {
         e.preventDefault();
+        sessionStorage.setItem('USER',userName);
+        sessionStorage.setItem('DIFFICULY',selectedDifficultyLevel);
     }
 
     return (
@@ -16,7 +18,9 @@ function LoginForm() {
             <select id="difficultyLevel" value={selectedDifficultyLevel} onChange={e=>setSelectedDifficultyLevel(e.target.value)}>
                 {DifficultyArray.map(val=>(<option key={val}>{val}</option>))}
             </select>
-            <NavLink type='submit' to="/game" className="loginBtn"> <span><img src={PlayButton} width="25px" height="25px" alt="playbutton" /></span><span className="start-game-text">Start Game</span> </NavLink>
+            <button type="submit" onClick={startGame}>
+            <NavLink to="/game" className="loginBtn"> <span><img src={PlayButton} width="25px" height="25px" alt="playbutton" /></span><span className="start-game-text">Start Game</span> </NavLink>
+            </button>
         </form>
     )
 }
