@@ -8,29 +8,28 @@ import {
 import './App.css';
 
 
-const Game = React.lazy(() => import('./pages/Game'));
-const Login = React.lazy(() => import('./pages/Login'));
-const Result = React.lazy(() => import('./pages/Result'));
+const Game = React.lazy(() =>
+  import('./pages/game/Game'));
+const Login = React.lazy(() =>
+  import('./pages/login/Login'));
+const Result = React.lazy(() =>
+  import('./pages/result/Result'));
 
 
 function App() {
   return (
-    <React.Suspense fallback={<Spinner />}>
-    <Router> 
-      <Switch>
-          <Route path="/">
-            <Login/>
-          </Route>
-          <Route path="/game">
-            <Game/>
-          </Route>
-          <Route path="/result">
-            <Result/>
-          </Route>
-        </Switch>
-    </Router>
-    </React.Suspense>
-  );
+    <div className="fastFingers" >
+      <React.Suspense fallback={< Spinner />} >
+        <Router>
+          <Switch>   
+            <Route  path="/game" component={Game}/>
+            <Route  path="/result" component={Result}/>
+            <Route exact path="/" component={Login}/>
+          </Switch>
+        </Router>
+      </React.Suspense>
+    </div>
+    );
 }
 
 export default App;
