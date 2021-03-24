@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
-    width: 90%;
 }
 .user {
     display: flex;
@@ -20,7 +19,12 @@
 }
 .header-name {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.header-name > div{
+    display: flex;
+    justify-content: flex-start;
 }
 .score {
     text-transform: uppercase;

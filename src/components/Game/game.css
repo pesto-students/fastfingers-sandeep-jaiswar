@@ -1,72 +1,62 @@
-.card {
-    color: "red";
-     padding:"100px 100px" ;
-     height: 100%;
-}
-*{
-  font-family: 'Montserrat', sans-serif;
-}
 .highlight {
     color:green;
 }
 .wrongTypeWord {
     color: yellow;
 }
-.game {
-    display: flex;
-    flex:  1 1 100%;
-    flex-direction: column;
-    padding:3%;
-}
-.game > * {
-  flex-basis: 100%;
-}
-.main {
-    display: flex;
-    /* padding-top: 7%;
-    min-height: 25rem; */
-    /* border: 2px solid green; */
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
+
 .scoreboard {
-    display: flex;
-    flex-direction: column;
-justify-content: flex-start;
-/* align-items: center; */
-    color: #ff5155;
-    border: 2px solid #ff5155;
-    padding: 1%;
-    border-radius: 2%;
-    min-width: 200px;
-    max-height: 345px;
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #ff5155;
+  border: 2px solid #ff5155;
+  padding: 1%;
+  border-radius: 2%;
+  overflow-y: auto;
+  max-height: 50vh;
 }
-.timer-input {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    padding-right: 5%;
-    /* flex-direction: column; */
-}
-.timer {
-    font-size: 4rem;
-    color: white;
-}
+
 .word {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    color: white;
-    line-height: 2.1;
+  font-size: xx-large;
+  text-transform: uppercase;
+  color: white;
+  line-height: 2.1;
 }
-.base-timer {
+
+
+.stop-game{
+  font-family: 'Lato', sans-serif;
+  font-size: x-large;
+  margin: 50% auto;
+  cursor: pointer;
+}
+
+.close-icon {
+  height: 25px;
+  width: 25px;
+} 
+
+  .gameGrid{
+    margin: 10px;
+  }
+  
+  .game {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+  }
+  .game > * {
+    flex-basis: 100%;
+    margin: 5px;
+  }
+
+  .base-timer {
     position: relative;
     height: 180px;
     width: 190px;
   }
   
-  /* Removes SVG styling that would hide the time label */
   .base-timer__circle {
     fill: none;
     stroke: none;
@@ -79,43 +69,32 @@ justify-content: flex-start;
   .base-timer__label {
     position: absolute;
     
-    /* Size should match the parent container */
     width: 180px;
     height: 180px;
+        top: 0;
     
-    /* Keep the label aligned to the top */
-    top: 0;
-    
-    /* Create a flexible box that centers content vertically and horizontally */
     display: flex;
     align-items: center;
     justify-content: center;
   
-    /* Sort of an arbitrary number; adjust to your liking */
     font-size: 40px;
     color: white;
   }
 
   .base-timer__path-remaining {
-    /* Just as thick as the original ring */
     stroke-width: 7px;
   
-    /* Rounds the line endings to create a seamless circle */
     stroke-linecap: round;
   
-    /* Makes sure the animation starts at the top of the circle */
     transform: rotate(90deg);
     transform-origin: center;
   
-    /* One second aligns with the speed of the countdown timer */
     transition: auto;
   
-    /* Allows the ring to change color when the color value updates */
     stroke: currentColor;
   }
   
   .base-timer__svg {
-    /* Flips the svg and makes the animation to move left-to-right */
     transform: scaleX(-1);
   }
   .base-timer__path-remaining.green {
@@ -129,33 +108,48 @@ justify-content: flex-start;
   .base-timer__path-remaining.red {
     color: #ff5155;
   }
-  
-  /* .base-timer__label {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-  } */
-  .final {
-      text-transform: uppercase;
-      font-size: 1.8rem;
-        color: #bb2327;
-        font-family: 'Montserrat', sans-serif;
-        text-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
-  /* font-family: Gotham; */
-  /* font-size: 48px; */
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.21;
-        letter-spacing: normal;
-        padding-right: 5px;
+
+  .timer-input{
+    display: grid;
+    place-items: center;
   }
 
-  .close-icon {
-      padding-right: 5px;
+  .centerbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainSection > *{
+    margin: 5px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .game{
+      flex-direction: column;
+    }
+
+    .mainSection{
+      display: flex;
+    }
+
+    .timer-input{
+      flex-grow: 1;
+      margin-right: 9%;
+    }
+
+    .rightSection{
+      display: flex;
+    }
+
+    .main-header{
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .header-name{
+      flex-direction: row !important;
+      justify-content: space-between;
+    }
   }

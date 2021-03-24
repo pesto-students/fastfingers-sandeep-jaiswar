@@ -7,15 +7,13 @@ import Scoreboard from './components/Scoreboard/Scoreboard';
 
 function App() {
   return (
-    <div className="container">
-      <BrowserRouter>
-          <Switch>
-            <Route path="/game" component={Game}></Route>
-            <Route path="/scoreboard" component={Scoreboard}></Route>
-            <Route path="/" exact component={Login}></Route>
-          </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/game" component={Game}></Route>
+        <Route path="/scoreboard" component={Scoreboard}></Route>
+        <Route path="/" exact component={Login}></Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
