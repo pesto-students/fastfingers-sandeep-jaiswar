@@ -1,0 +1,36 @@
+.play {
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 6%;
+    color: #ff5155;
+    margin-left: 6%;
+}
+.play:hover {
+    cursor: pointer;
+}
+.start-game {
+    font-family: 'Lato', sans-serif;
+    font-size: x-large;
+    margin: 50% auto;
+    cursor: pointer;
+}
+.errorMessage {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.spacer{
+    margin-top: 5%;
+}
