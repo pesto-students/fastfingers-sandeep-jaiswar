@@ -1,35 +1,22 @@
 import React from 'react';
-import Spinner from './utilities/Spinner';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
 import './App.css';
-
-
-const Game = React.lazy(() =>
-  import('./pages/game/Game'));
-const Login = React.lazy(() =>
-  import('./pages/login/Login'));
-const Result = React.lazy(() =>
-  import('./pages/result/Result'));
-
+import Login from './components/Login/Login';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Game from './components/Game/game';
+import Scoreboard from './components/Scoreboard/Scoreboard';
 
 function App() {
   return (
-    <div className="fastFingers" >
-      <React.Suspense fallback={< Spinner />} >
-        <Router>
-          <Switch>   
-            <Route  path="/game" component={Game}/>
-            <Route  path="/result" component={Result}/>
-            <Route exact path="/" component={Login}/>
+    <div className="container">
+      <BrowserRouter>
+          <Switch>
+            <Route path="/game" component={Game}></Route>
+            <Route path="/scoreboard" component={Scoreboard}></Route>
+            <Route path="/" exact component={Login}></Route>
           </Switch>
-        </Router>
-      </React.Suspense>
+      </BrowserRouter>
     </div>
-    );
+  );
 }
 
 export default App;
