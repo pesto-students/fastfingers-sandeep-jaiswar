@@ -63,7 +63,7 @@ class Form extends Component {
                 }
                 <Dropdown difficultyLevel={this.state.difficultyLevel} onSelectHandler={(item) => this.onSelectHandler(item)} ref={this.selectedRef} />
                 <center onClick={this.formDetails} className="spacer">
-                    <div className=""> <span> <img width="25px" height="25px" src={Playbtn} /> </span> <span className="start-game">Start Game</span></div>
+                    <div className=""> <span> <img width="25px" height="25px" src={Playbtn} alt="playtbn" /> </span> <span className="start-game">Start Game</span></div>
                 </center>
             </div>
         );
