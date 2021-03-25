@@ -100,7 +100,7 @@ class game extends Component {
     let wordsArray = [];
     if (difficultyLevel === "Easy") { wordsArray = this.easyArray }
     else if (difficultyLevel === "Medium") { wordsArray = this.mediumArray }
-    else { wordsArray = this.mediumArray }
+    else { wordsArray = this.hardArray }
     return wordsArray;
   }
 
@@ -131,9 +131,9 @@ class game extends Component {
   checkDifficultyFactor = () => {
     let difficulty = this.state.difficulty;
     this.userDifficultyFactor += 0.01;
-    if (this.userDifficultyFactor > 1.02 && this.userDifficultyFactor <= 1.05) {
+    if (this.userDifficultyFactor > 1 && this.userDifficultyFactor <= 1.5) {
       difficulty = "Medium";
-    } else if (this.userDifficultyFactor > 1.05) {
+    } else if (this.userDifficultyFactor > 1.5) {
       difficulty = "Hard";
     }
     return difficulty;
