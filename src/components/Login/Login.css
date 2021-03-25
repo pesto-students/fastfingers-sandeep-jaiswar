@@ -44,7 +44,6 @@
 .loginGrid{
   min-height: 100vh;
   min-width: 100vw;  
-  border: 2px solid salmon;
   display: grid;
   place-items: center;
 }
